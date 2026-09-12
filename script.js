@@ -17,7 +17,7 @@ function checkEligibility() {
   let expenses = Number(expensesValue);
   let savings = income - expenses;
 
-  if (savings > 20000) {
+  if (savings >= 20000) {
     document.getElementById("eligibilityResult").innerText = "✅ You are eligible for a home loan!";
     showContactPopup();
   } else {
