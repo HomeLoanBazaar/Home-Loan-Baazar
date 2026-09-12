@@ -20,8 +20,13 @@
   <section id="eligibility">
     <h2>Loan Eligibility</h2>
     <p>Enter your income and expenses to check eligibility.</p>
-    <input type="number" id="income" placeholder="Monthly Income">
-    <input type="number" id="expenses" placeholder="Monthly Expenses">
+
+    <div class="eligibility-form">
+      <input type="number" id="income" placeholder="Monthly Income">
+      <input type="number" id="expenses" placeholder="Monthly Expenses">
+      <input type="tel" id="mobileNumber" placeholder="Phone number" aria-label="Phone number">
+    </div>
+
     <button onclick="checkEligibility()">Check Eligibility</button>
     <p id="eligibilityResult"></p>
   </section>
@@ -36,7 +41,7 @@
   </section>
 
   <section id="documents">
-    <h2>Required Documents</h2>
+    <h2>Required Documents</h2>https://homeloanbazaar.github.io/Home-Loan-Baazar/
     <ul>
       <li>Identity Proof (Aadhar, Passport, etc.)</li>
       <li>Address Proof</li>
@@ -49,6 +54,22 @@
     <h2>Rate of Interest</h2>
     <p>Current Home Loan Interest Rate: <strong>8.5% - 9.5%</strong></p>
   </section>
+
+  <div id="contactPopup" class="contact-popup">
+    <div class="contact-popup-content">
+      <span class="close-popup" onclick="closeContactPopup()">×</span>
+      <h3>Talk to Our Loan Advisor</h3>
+      <p class="advisor-title">Your home loan application can be processed by:</p>
+      <div class="advisor-card">
+        <p><strong>Name:</strong> <span id="advisorName">Lakshman Ruthala</span></p>
+        <p><strong>Mobile:</strong> <span id="advisorMobile">+91 8885689502</span></p>
+      </div>
+      <div class="popup-actions">
+        <a id="callAdvisor" class="call-button" href="tel:+918885689502">Call Advisor</a>
+        <button class="close-button" onclick="closeContactPopup()">Close</button>
+      </div>
+    </div>
+  </div>
 
   <footer>
     <p>© 2026 Home Loan Bazar</p>
