@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Loan Bazar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🏠 Home Loan Bazar</h1>
+    <nav>
+      <a href="#eligibility">Eligibility</a>
+      <a href="#emi">EMI Calculator</a>
+      <a href="#documents">Documents</a>
+      <a href="#rates">Rate of Interest</a>
+    </nav>
+  </header>
+
+  <section id="eligibility">
+    <h2>Loan Eligibility</h2>
+    <p>Enter your income and expenses to check eligibility.</p>
+    <input type="number" id="income" placeholder="Monthly Income">
+    <input type="number" id="expenses" placeholder="Monthly Expenses">
+    <button onclick="checkEligibility()">Check Eligibility</button>
+    <p id="eligibilityResult"></p>
+  </section>
+
+  <section id="emi">
+    <h2>EMI Calculator</h2>
+    <input type="number" id="loanAmount" placeholder="Loan Amount">
+    <input type="number" id="interestRate" placeholder="Interest Rate (%)">
+    <input type="number" id="loanTenure" placeholder="Tenure (years)">
+    <button onclick="calculateEMI()">Calculate EMI</button>
+    <p id="emiResult"></p>
+  </section>
+
+  <section id="documents">
+    <h2>Required Documents</h2>
+    <ul>
+      <li>Identity Proof (Aadhar, Passport, etc.)</li>
+      <li>Address Proof</li>
+      <li>Income Proof (Salary slips, ITR)</li>
+      <li>Property Documents</li>
+    </ul>
+  </section>
+
+  <section id="rates">
+    <h2>Rate of Interest</h2>
+    <p>Current Home Loan Interest Rate: <strong>8.5% - 9.5%</strong></p>
+  </section>
+
+  <footer>
+    <p>© 2026 Home Loan Bazar</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
