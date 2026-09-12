@@ -44,6 +44,22 @@ button:hover {
   background: #219150;
 }
 
+.eligibility-button-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.check-btn {
+  min-width: 180px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
 .eligibility-form {
   display: flex;
   flex-wrap: wrap;
@@ -56,6 +72,11 @@ button:hover {
   border-radius: 5px;
   border: 1px solid #bdc3c7;
   min-width: 230px;
+}
+
+#eligibilityResult {
+  margin-top: 12px;
+  font-weight: 600;
 }
 
 .contact-popup {
@@ -124,6 +145,11 @@ button:hover {
 .close-button {
   background: #e74c3c;
   color: #fff;
+}
+
+#eligibilityResult {
+  margin-top: 12px;
+  font-weight: 600;
 }
 
 footer {

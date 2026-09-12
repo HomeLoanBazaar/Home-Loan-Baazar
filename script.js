@@ -1,13 +1,21 @@
 function checkEligibility() {
-  let income = Number(document.getElementById("income").value);
-  let expenses = Number(document.getElementById("expenses").value);
+  let incomeValue = document.getElementById("income").value;
+  let expensesValue = document.getElementById("expenses").value;
   let mobileNumber = document.getElementById("mobileNumber").value.trim();
-  let savings = income - expenses;
+
+  if (!incomeValue || !expensesValue || Number(incomeValue) <= 0 || Number(expensesValue) < 0) {
+    document.getElementById("eligibilityResult").innerText = "Please enter valid income and expenses values.";
+    return;
+  }
 
   if (!mobileNumber || mobileNumber.length < 10) {
     document.getElementById("eligibilityResult").innerText = "📞 Please enter a valid mobile number to continue.";
     return;
   }
+
+  let income = Number(incomeValue);
+  let expenses = Number(expensesValue);
+  let savings = income - expenses;
 
   if (savings > 20000) {
     document.getElementById("eligibilityResult").innerText = "✅ You are eligible for a home loan!";
