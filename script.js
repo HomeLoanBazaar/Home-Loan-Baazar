@@ -26,7 +26,6 @@ function checkEligibility() {
   if (savings >= 20000) {
     document.getElementById("eligibilityResult").innerText = "✅ You are eligible for a home loan!";
     showContactPopup();
-    sendEligibilityDetailsToWhatsApp(clientName, mobileNumber);
   } else {
     document.getElementById("eligibilityResult").innerText = "❌ Your savings are too low for eligibility.";
   }
@@ -43,26 +42,6 @@ function closeContactPopup() {
   const popup = document.getElementById("contactPopup");
   if (popup) {
     popup.style.display = "none";
-  }
-}
-
-function sendEligibilityDetailsToWhatsApp(clientName, mobileNumber) {
-  const advisorPhone = "918885689502";
-  const message = `Client Name: ${clientName}\nPhone Number: ${mobileNumber}`;
-  const whatsappUrl = `https://wa.me/${advisorPhone}?text=${encodeURIComponent(message)}`;
-
-  const whatsappLink = document.getElementById("whatsappAdvisor");
-  if (whatsappLink) {
-    whatsappLink.href = whatsappUrl;
-  }
-
-  try {
-    const opened = window.open(whatsappUrl, "_blank");
-    if (!opened) {
-      window.location.href = whatsappUrl;
-    }
-  } catch (error) {
-    window.location.href = whatsappUrl;
   }
 }
 
