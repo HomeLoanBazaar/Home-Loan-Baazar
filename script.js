@@ -26,7 +26,7 @@ function checkEligibility() {
   if (savings >= 20000) {
     document.getElementById("eligibilityResult").innerText = "✅ You are eligible for a home loan!";
     showContactPopup();
-    sendEligibilityDetailsToWhatsAppAndEmail(clientName, mobileNumber);
+    sendEligibilityDetailsToWhatsApp(clientName, mobileNumber);
   } else {
     document.getElementById("eligibilityResult").innerText = "❌ Your savings are too low for eligibility.";
   }
@@ -46,33 +46,23 @@ function closeContactPopup() {
   }
 }
 
-function sendEligibilityDetailsToWhatsAppAndEmail(clientName, mobileNumber) {
+function sendEligibilityDetailsToWhatsApp(clientName, mobileNumber) {
   const advisorPhone = "918885689502";
-  const emailAddress = "lakshman12ruthala@gmail.com";
-  const detailsMessage = `Client Name: ${clientName}\nPhone Number: ${mobileNumber}`;
-  const whatsappUrl = `https://wa.me/${advisorPhone}?text=${encodeURIComponent(detailsMessage)}`;
-  const emailUrl = `mailto:${emailAddress}?subject=${encodeURIComponent("Home Loan Eligibility Lead")}&body=${encodeURIComponent(detailsMessage)}`;
+  const message = `Client Name: ${clientName}\nPhone Number: ${mobileNumber}`;
+  const whatsappUrl = `https://wa.me/${advisorPhone}?text=${encodeURIComponent(message)}`;
+
+  const whatsappLink = document.getElementById("whatsappAdvisor");
+  if (whatsappLink) {
+    whatsappLink.href = whatsappUrl;
+  }
 
   try {
-    const whatsappWindow = window.open(whatsappUrl, "_blank", "noopener,noreferrer");
-    if (!whatsappWindow) {
+    const opened = window.open(whatsappUrl, "_blank");
+    if (!opened) {
       window.location.href = whatsappUrl;
     }
   } catch (error) {
     window.location.href = whatsappUrl;
-  }
-
-  try {
-    const emailLink = document.createElement("a");
-    emailLink.href = emailUrl;
-    emailLink.style.display = "none";
-    emailLink.rel = "noopener";
-    emailLink.target = "_self";
-    document.body.appendChild(emailLink);
-    emailLink.click();
-    document.body.removeChild(emailLink);
-  } catch (error) {
-    console.log("Email fallback could not be opened silently.");
   }
 }
 
