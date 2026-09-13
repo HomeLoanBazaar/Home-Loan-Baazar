@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://homeloanbazaar.github.io/Home-Loan-Baazar/sitemap.xml
+Sitemap: https://www.homeloanbazar.com/sitemap.xml
