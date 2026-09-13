@@ -75,11 +75,6 @@ button:hover {
   min-width: 230px;
 }
 
-#eligibilityResult {
-  margin-top: 12px;
-  font-weight: 600;
-}
-
 .contact-popup {
   display: none;
   position: fixed;
@@ -127,11 +122,9 @@ button:hover {
   display: flex;
   gap: 12px;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .call-button,
-.whatsapp-button,
 .close-button {
   text-decoration: none;
   display: inline-block;
@@ -142,11 +135,6 @@ button:hover {
 
 .call-button {
   background: #2980b9;
-  color: #fff;
-}
-
-.whatsapp-button {
-  background: #25d366;
   color: #fff;
 }
 
